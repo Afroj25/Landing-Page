@@ -1,0 +1,244 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: rgb(219, 198, 179);
+    color: #333;
+}
+
+header {
+    background-image: url('main_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    width: 100%;
+    height: 80px;
+}
+
+.logo {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    letter-spacing: 6px;
+    padding: 3px;
+}
+/* Add transition for the menu links */
+.menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+/* Hover effect */
+.menu a:hover {
+    color: #71476c; /* Change link color on hover */
+    transform: scale(1.1); /* Slightly enlarge the text */
+}
+
+/* Add an underline animation effect on hover */
+.menu a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #71476c;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Make the underline visible on hover */
+.menu a:hover::before {
+    visibility: visible;
+    transform: scaleX(1); /* Expand underline from left to right */
+}
+
+.register button {
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+.register button:hover{
+    background-color: #71476c;
+    border: none;
+    
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-text p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.hero-text button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: #69453f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.hero-text button:hover {
+    background: #e5533f;
+}
+
+/* Fade-in Effect for Sections */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Destination Slider */
+#destinations {
+    padding: 50px;
+    text-align: center;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+.slider img {
+    width: 100%;
+    border-radius: 10px;
+    transition: opacity 0.5s;
+}
+
+
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* About Section */
+#about {
+    padding: 50px;
+    background: #aa9d95;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px;
+    background: rgb(150, 135, 121);
+    color: white;
+    text-align: center;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+#contact button {
+    padding: 10px 20px;
+    background: white;
+    color: #ff6347;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: #e5533f;
+    color: white;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background:#78675c;
+    color: white;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
